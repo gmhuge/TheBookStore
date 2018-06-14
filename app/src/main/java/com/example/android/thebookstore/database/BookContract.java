@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2016 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.android.thebookstore.database;
 
 import android.content.ContentResolver;
@@ -25,8 +10,6 @@ public final class BookContract {
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     public static final String PATH_BOOKS = "books";
 
-    // To prevent someone from accidentally instantiating the contract class,
-    // give it an empty constructor.
     private BookContract() {
     }
 
@@ -56,16 +39,6 @@ public final class BookContract {
 
         public final static String COLUMN_BOOK_SUPPLIER_PHONE_NUMBER = "supplier_phone_number";
 
-//        public static final int GENDER_UNKNOWN = 0;
-//        public static final int GENDER_MALE = 1;
-//        public static final int GENDER_FEMALE = 2;
-
-//        public static boolean isValidGender(int gender) {
-//            if (gender == GENDER_UNKNOWN || gender == GENDER_MALE || gender == GENDER_FEMALE) {
-//                return true;
-//            }
-        //           return false;
-        //       }
     }
 
 }
