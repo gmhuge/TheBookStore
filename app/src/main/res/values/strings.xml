@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TheBookStore</string>
+    <string name="empty_store_notification">The store is empty</string>
 </resources>
