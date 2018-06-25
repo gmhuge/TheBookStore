@@ -6,19 +6,14 @@
     <string name="action_insert_dummy_data">Insert Dummy Data</string>
 
     <!-- Label for overflow menu option that deletes all pet data in the app [CHAR LIMIT=20] -->
-    <string name="action_delete_all_entries">Delete All Pets</string>
+    <string name="action_delete_all_entries">Delete All Books</string>
 
-    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
-    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
-
-    <!-- Subtitle text for the empty view that prompts the user to add a pet [CHAR LIMIT=50] -->
-    <string name="empty_view_subtitle_text">Get started by adding a pet</string>
 
     <!-- Title for the activity to add a new pet [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_new_pet">Add a Pet</string>
+    <string name="activity_detail_title_new_book">Add a Book</string>
 
     <!-- Title for the activity to edit an existing pet [CHAR LIMIT=20] -->
-    <string name="editor_activity_title_edit_pet">Edit Pet</string>
+    <string name="activity_detail_title_edit_book">Edit Book</string>
 
     <!-- Label for editor menu option to save pet and leave editor [CHAR LIMIT=20] -->
     <string name="action_save">Save</string>
@@ -27,19 +22,19 @@
     <string name="action_delete">Delete</string>
 
     <!-- Toast message in editor when new pet has been successfully inserted [CHAR LIMIT=NONE] -->
-    <string name="editor_insert_pet_successful">Pet saved</string>
+    <string name="insert_book_successful_toast">Book saved successfully</string>
 
     <!-- Toast message in editor when new pet has failed to be inserted [CHAR LIMIT=NONE] -->
-    <string name="editor_insert_pet_failed">Error with saving pet</string>
+    <string name="insert_book_error_toast">Error with saving book</string>
 
     <!-- Toast message in editor when current pet was successfully updated [CHAR LIMIT=NONE] -->
-    <string name="editor_update_pet_successful">Pet updated</string>
+    <string name="update_book_successful_toast">Book updated successfully</string>
 
     <!-- Toast message in editor when current pet has failed to be updated [CHAR LIMIT=NONE] -->
-    <string name="editor_update_pet_failed">Error with updating pet</string>
+    <string name="upate_book_error_toast">Error with updating book</string>
 
     <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
-    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="is_it_discard_changes">Discard your changes and quit editing?</string>
 
     <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
     <string name="discard">Discard</string>
@@ -48,13 +43,13 @@
     <string name="keep_editing">Keep Editing</string>
 
     <!-- Toast message in editor when current pet was successfully deleted [CHAR LIMIT=NONE] -->
-    <string name="editor_delete_pet_successful">Pet deleted</string>
+    <string name="detail_delete_book_successful">Book deleted</string>
 
     <!-- Toast message in editor when current pet has failed to be deleted [CHAR LIMIT=NONE] -->
-    <string name="editor_delete_pet_failed">Error with deleting pet</string>
+    <string name="detail_delete_book_error">Error with deleting book</string>
 
     <!-- Dialog message to ask the user to confirm deleting the current pet [CHAR LIMIT=NONE] -->
-    <string name="delete_dialog_msg">Delete this pet?</string>
+    <string name="delete_dialog">Delete this book?</string>
 
     <!-- Dialog button text for the option to confirm deleting the current pet [CHAR LIMIT=20] -->
     <string name="delete">Delete</string>
@@ -63,37 +58,32 @@
     <string name="cancel">Cancel</string>
 
     <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
-    <string name="category_overview">Overview</string>
+    <string name="category_main">Main info</string>
 
     <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
-    <string name="category_gender">Gender</string>
+    <string name="category_buyer_info">Buyer info</string>
 
     <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
-    <string name="category_measurement">Measurement</string>
+    <string name="category_supplier">Supplier</string>
 
     <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_name">Na`me</string>
+    <string name="hint_book_name">Name</string>
 
     <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_breed">Breed</string>
+    <string name="hint_book_author">Author</string>
 
     <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
-    <string name="hint_pet_weight">Weight</string>
+    <string name="hint_book_price">Price</string>
+
+    <string name="hint_book_quantity">Quantity</string>
+
+    <string name="hint_book_supplier_name">Supplier name</string>
+
+    <string name="hint_book_supplier_phone">Supplier phone</string>
 
     <!-- Units for weight of the pet (kilograms) [CHAR LIMIT=5] -->
-    <string name="unit_pet_weight">kg</string>
+    <string name="currency">$</string>
 
-    <!-- Label for dropdown menu option if the pet's gender is unknown [CHAR LIMIT=20] -->
-    <string name="gender_unknown">Unknown</string>
-
-    <!-- Label for dropdown menu option if the pet is male [CHAR LIMIT=20] -->
-    <string name="gender_male">Male</string>
-
-    <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
-    <string name="gender_female">Female</string>
-
-    <!-- Label for the pet's breed if the breed is unknown [CHAR LIMIT=20] -->
-    <string name="unknown_breed">Unknown breed</string>
     <string name="no_more_books">No more books for this position!</string>
 
 </resources>

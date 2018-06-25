@@ -34,32 +34,33 @@ public class StoreListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
 
-  /*
+
         // Setup FAB to open EditorActivity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StoreListActivity.this, EditorActivity.class);
+                Intent intent = new Intent(StoreListActivity.this, DetailActivity.class);
                 startActivity(intent);
             }
         });
-  */
+
 
         ListView bookListView = (ListView) findViewById(R.id.list);
 
         View emptyView = findViewById(R.id.empty_view);
+
         bookListView.setEmptyView(emptyView);
 
         mCursorAdapter = new BookCursorAdapter(this, null);
         bookListView.setAdapter(mCursorAdapter);
 
 
-/*
+
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Intent intent = new Intent(StoreListActivity.this, EditorActivity.class);
+                Intent intent = new Intent(StoreListActivity.this, DetailActivity.class);
 
                 Uri currentBookUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, id);
 
@@ -68,10 +69,6 @@ public class StoreListActivity extends AppCompatActivity implements
                 startActivity(intent);
             }
         });
-*/
-
-
-
 
 
 
