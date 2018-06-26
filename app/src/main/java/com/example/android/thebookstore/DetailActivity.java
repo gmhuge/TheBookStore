@@ -18,7 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.android.thebookstore.database.BookContract.BookEntry;
@@ -108,6 +110,61 @@ public class DetailActivity extends AppCompatActivity implements
         mQuantityEditText.setOnTouchListener(mTouchListener); // ----------------------------------!!!!!!!!!! ???
         mSupplierNameEditText.setOnTouchListener(mTouchListener);
         mSupplierPhoneEditText.setOnTouchListener(mTouchListener);
+
+        ImageButton increaseQuantityButton = (ImageButton) findViewById(R.id.quantity_increase);
+        ImageButton decreaseQuantityButton = (ImageButton) findViewById(R.id.quantity_decrease);
+        ImageButton callSupplierButton = (ImageButton) findViewById(R.id.supplier_call);
+
+        increaseQuantityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String quantityString = mQuantityEditText.getText().toString().trim();
+                int quantity = 0;
+                if (!TextUtils.isEmpty(quantityString)) {
+                    quantity = Integer.parseInt(quantityString);
+                }
+                quantity++;
+                mQuantityEditText.setText(String.valueOf(quantity));
+            }
+        });
+
+        decreaseQuantityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String quantityString = mQuantityEditText.getText().toString().trim();
+                int quantity = 0;
+                if (!TextUtils.isEmpty(quantityString)) {
+                    quantity = Integer.parseInt(quantityString);
+                }
+                if (quantity > 0) {
+                    quantity--;
+                }
+                else {
+                    Toast toast = Toast.makeText(view.getContext(), R.string.no_more_books, Toast.LENGTH_LONG);
+                    toast.show();
+                }
+                mQuantityEditText.setText(String.valueOf(quantity));
+            }
+        });
+
+        callSupplierButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String supplierPhoneString = "tel:";
+                supplierPhoneString = supplierPhoneString.concat(mSupplierPhoneEditText.getText().toString().trim());
+
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(supplierPhoneString));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+
     }
 
 
