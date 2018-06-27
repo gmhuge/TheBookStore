@@ -44,8 +44,6 @@
             </LinearLayout>
         </LinearLayout>
 
-
-
         <LinearLayout
             android:id="@+id/container_buyer_info"
             android:layout_width="match_parent"
@@ -76,22 +74,25 @@
                     style="@style/EditorFieldStyle"
                     android:hint="@string/hint_book_quantity"
                     android:inputType="number" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <ImageButton
                         android:id="@+id/quantity_increase"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_increase"
-                        android:backgroundTint="@color/name_text"/>
+                        android:backgroundTint="@color/name_text"
+                        android:src="@drawable/ic_increase" />
+
                     <ImageButton
                         android:id="@+id/quantity_decrease"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_decrease"
-                        android:backgroundTint="@color/name_text"/>
+                        android:backgroundTint="@color/name_text"
+                        android:src="@drawable/ic_decrease" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -128,12 +129,13 @@
                     style="@style/EditorFieldStyle"
                     android:hint="@string/hint_book_supplier_phone"
                     android:inputType="phone" />
+
                 <ImageButton
                     android:id="@+id/supplier_call"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_phone"
-                    android:backgroundTint="@color/name_text"/>
+                    android:backgroundTint="@color/name_text"
+                    android:src="@drawable/ic_phone" />
             </LinearLayout>
 
         </LinearLayout>

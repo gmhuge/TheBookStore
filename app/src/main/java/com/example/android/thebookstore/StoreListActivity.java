@@ -16,9 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.android.thebookstore.database.BookContract.BookEntry;
 
@@ -34,8 +32,6 @@ public class StoreListActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
 
-
-        // Setup FAB to open EditorActivity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,46 +43,36 @@ public class StoreListActivity extends AppCompatActivity implements
 
 
         ListView bookListView = (ListView) findViewById(R.id.list);
-
         View emptyView = findViewById(R.id.empty_view);
-
         bookListView.setEmptyView(emptyView);
 
         mCursorAdapter = new BookCursorAdapter(this, null);
         bookListView.setAdapter(mCursorAdapter);
-
-
-
         bookListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent = new Intent(StoreListActivity.this, DetailActivity.class);
 
                 Uri currentBookUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, id);
-
                 intent.setData(currentBookUri);
-
                 startActivity(intent);
             }
         });
-
-
 
         getLoaderManager().initLoader(BOOK_LOADER, null, this);
     }
 
     private void insertBook() {
         ContentValues values = new ContentValues();
-        values.put(BookEntry.COLUMN_BOOK_NAME, "Book Name 1");
-        values.put(BookEntry.COLUMN_BOOK_AUTHOR, "John Smith");
+        values.put(BookEntry.COLUMN_BOOK_NAME, getString(R.string.default_name));
+        values.put(BookEntry.COLUMN_BOOK_AUTHOR, getString(R.string.default_author));
         values.put(BookEntry.COLUMN_BOOK_PRICE, 7);
         values.put(BookEntry.COLUMN_BOOK_QUANTITY, 15);
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, "John Doe");
-        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER, "555-5555-5555");
+        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_NAME, getString(R.string.default_sapplier_name));
+        values.put(BookEntry.COLUMN_BOOK_SUPPLIER_PHONE_NUMBER, getString(R.string.default_supplier_phone));
 
         Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
     }
-
 
     private void deleteAllBooks() {
         int rowsDeleted = getContentResolver().delete(BookEntry.CONTENT_URI, null, null);
@@ -121,12 +107,12 @@ public class StoreListActivity extends AppCompatActivity implements
                 BookEntry.COLUMN_BOOK_QUANTITY,
                 BookEntry.COLUMN_BOOK_PRICE};
 
-        return new CursorLoader(this,   // Parent activity context
-                BookEntry.CONTENT_URI,   // Provider content URI to query
-                projection,             // Columns to include in the resulting Cursor
-                null,                   // No selection clause
-                null,                   // No selection arguments
-                null);                  // Default sort order
+        return new CursorLoader(this,
+                BookEntry.CONTENT_URI,
+                projection,
+                null,
+                null,
+                null);
     }
 
     @Override

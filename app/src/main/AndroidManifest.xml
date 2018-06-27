@@ -18,13 +18,13 @@
         </activity>
         <activity
             android:name=".DetailActivity"
-            android:theme="@style/EditorTheme"
-            android:parentActivityName=".StoreListActivity" >
-            <!-- Parent activity meta-data to support 4.0 and lower -->
+            android:parentActivityName=".StoreListActivity"
+            android:theme="@style/EditorTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".StoreListActivity" />
         </activity>
+
         <provider
             android:name=".database.BookProvider"
             android:authorities="com.example.android.thebookstore"
